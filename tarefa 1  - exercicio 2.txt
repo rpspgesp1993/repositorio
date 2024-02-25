@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class 002 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o primeiro número inteiro: ");
+        int numero1 = scanner.nextInt();
+
+        System.out.print("Digite o segundo número inteiro: ");
+        int numero2 = scanner.nextInt();
+
+        if (numero1 == numero2) {
+            System.out.println("OS NÚMEROS SÃO IGUAIS.");
+        } else if (numero1 > numero2) {
+            System.out.println("O PRIMEIRO NÚMERO É MAIOR QUE O SEGUNDO.");
+        } else {
+            System.out.println("O SEGUNDO NÚMERO É MAIOR QUE O PRIMEIRO.");
+        }
+
+        scanner.close();
+    }
+}

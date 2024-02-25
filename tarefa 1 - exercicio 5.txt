@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class 005 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("DIGITE UM NUMERO: ");
+        int numero = scanner.nextInt();
+
+        if (numero % 2 == 0) {
+            System.out.println("O NÚMERO " + numero + " É PAR.");
+        } else {
+            System.out.println("O NÚMERO " + numero + " É ÍMPAR.");
+        }
+
+        scanner.close();
+    }
+}

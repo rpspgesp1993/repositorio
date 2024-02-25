@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class 006 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("INSIRA UM NÚMERO PARA CALCULAR O FATORIAL DELE: ");
+        int numero = scanner.nextInt();
+
+        long fatorial = calcularFatorial(numero);
+
+        System.out.println("O FATORIAL DE " + numero + " É: " + fatorial);
+
+        scanner.close();
+    }
+
+    private static long calcularFatorial(int numero) {
+        if (numero < 0) {
+            System.out.println("POR FAVOR, DIGITE UM NÚMERO QUE NÃO SEJA NEGATIVO.");
+            System.exit(0); 
+        }
+
+        if (numero == 0 || numero == 1) {
+            return 1;
+        } else {
+            long resultado = 1;
+            for (int i = 2; i <= numero; i++) {
+                resultado *= i;
+            }
+            return resultado;
+        }
+    }
+}
