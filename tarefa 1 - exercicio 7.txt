@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class 007 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("DIGITE A SUA IDADE: ");
+        int idade = scanner.nextInt();
+
+        classificarIdade(idade);
+
+        scanner.close();
+    }
+
+    private static void classificarIdade(int idade) {
+        if (idade < 0) {
+            System.out.println("POR FAVOR, DIGITE UMA IDADE VÁLIDA.");
+        } else if (idade < 18) {
+            System.out.println("A PESSOA É MENOR DE IDADE.");
+        } else if (idade < 60) {
+            System.out.println("A PESSOA É ADULTA.");
+        } else {
+            System.out.println("A PESSOA É IDOSA.");
+        }
+    }
+}
