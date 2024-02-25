@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class 010 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String senhaCorreta = "Java123";
+
+        boolean senhaCorretaDigitada = false;
+        int tentativas = 0;
+
+        while (!senhaCorretaDigitada && tentativas < 3) {
+            System.out.print("DIGITE A SENHA: ");
+            String senhaDigitada = scanner.nextLine();
+
+            if (senhaDigitada.equals(senhaCorreta)) {
+                senhaCorretaDigitada = true;
+                System.out.println("SENHA CORRETA,ACESSO PERMITIDO.");
+            } else {
+                tentativas++;
+                System.out.println("A SENHA ESTÁ INCORRETA " + tentativas + " DE 3.");
+            }
+        }
+
+        if (!senhaCorretaDigitada) {
+            System.out.println("NÚMERO MÁXIMO DE TENTATIVAS ATINGIDO. TENTE MAIS TARDE.");
+        }
+
+        scanner.close();
+    }
+}
