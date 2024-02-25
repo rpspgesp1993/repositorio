@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Senha {
+    public static void main(String[] args) {
+        String[][] dadosUsuarios = {
+                {"usuario1", "senha1"},
+                {"usuario2", "senha2"},
+                {"usuario3", "senha3"},
+                {"usuario4", "senha4"},
+                {"usuario5", "senha5"},
+                {"usuario6", "senha6"}
+        };
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("DIGITE O LOGIN: ");
+        String login = scanner.nextLine();
+
+        System.out.print("Digite a senha: ");
+        String senha = scanner.nextLine();
+
+        boolean credenciaisValidas = verificarCredenciais(dadosUsuarios, login, senha);
+
+        if (credenciaisValidas) {
+            System.out.println("LOGIN E SENHA CORRETO. ACESSO AUTORIZADO.");
+        } else {
+            System.out.println("LOGIN OU SENHA INCORRETO. ACESSO NEGADO.");
+        }
+
+        scanner.close();
+    }
+
+    static boolean verificarCredenciais(String[][] dadosUsuarios, String login, String senha) {
+        for (String[] usuario : dadosUsuarios) {
+            if (usuario[0].equals(login) && usuario[1].equals(senha)) {
+                return true;  
+            }
+        }
+        return false; 
+    }
+}
